@@ -6,24 +6,44 @@ import "./App.css";
 
 class App extends Component {
 
+  constructor(){
+    super();
+    this.state={
+      addSubscribersList:[]
+    }
+    
+
+    
+  }
+  componentDidMount(){
+    let newSubscriber={
+        id:0,
+        name:"Tsering",
+        phone:'997170780'
+    }
+  }
+  // let subscriberList=this.state.addSubscribersList;
+  // subscriberList.push({newSubscriber});
+  // this.setState(subscriberList);
+
   clickHandler(message){
     alert(message);
   }
 
   render(){
-    let subscribers=[
-      { 
-        id:1,
-        name:"Tsering",
-        number:"9127427442"
-      },
-      { 
-        id:2,
-        name:"Wangchu",
-        number:"9971707580"
-      }
+    // let subscribers=[
+    //   { 
+    //     id:1,
+    //     name:"Tsering",
+    //     number:"9127427442"
+    //   },
+    //   { 
+    //     id:2,
+    //     name:"Wangchu",
+    //     number:"9971707580"
+    //   }
 
-    ]
+    // ]
     
     return (
       <div>
@@ -38,7 +58,7 @@ class App extends Component {
           </div>
 
           
-          {subscribers.map(item=>{
+          {this.state.addSubscribersList.map(item=>{
               return <div key={item.id}className="grid-container">
                       <span className="grid-item">{item.name}</span>
                       <span className="grid-item">{item.number}</span>
