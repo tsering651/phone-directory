@@ -3,7 +3,9 @@ import "./Header.css"
 
 const Header=function(props){
    // const headerStyle={textAlign:"center",padding:20,backgroundColor:"#000",color:"#fff",textTransform:"uppercase"};
-    return(
+   
+   return(
+
         <div className="header" >
             {props.heading} 
         </div>  

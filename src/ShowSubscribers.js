@@ -1,27 +1,12 @@
 import { Component } from "react";
 import Header from "./Header";
-import "./App.css";
+import "./ShowSubscribers.css";
 
 
 
-class App extends Component {
+class ShowSubscribers extends Component {
 
-  constructor(){
-    super();
-    this.state={
-      addSubscribersList:[]
-    }
-    
-
-    
-  }
-  componentDidMount(){
-    let newSubscriber={
-        id:0,
-        name:"Tsering",
-        phone:'997170780'
-    }
-  }
+  
   // let subscriberList=this.state.addSubscribersList;
   // subscriberList.push({newSubscriber});
   // this.setState(subscriberList);
@@ -29,6 +14,7 @@ class App extends Component {
   clickHandler(message){
     alert(message);
   }
+
 
   render(){
     // let subscribers=[
@@ -58,7 +44,7 @@ class App extends Component {
           </div>
 
           
-          {this.state.addSubscribersList.map(item=>{
+          {this.props.subscribersList.map(item=>{
               return <div key={item.id}className="grid-container">
                       <span className="grid-item">{item.name}</span>
                       <span className="grid-item">{item.number}</span>
@@ -79,4 +65,4 @@ class App extends Component {
  
 }
 
-export default App;
+export default ShowSubscribers;
