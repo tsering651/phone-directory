@@ -1,6 +1,7 @@
 import { Component } from "react";
 import Header from "./Header";
 import "./ShowSubscribers.css";
+import {BrowserRouter as Router,Route,Routes,Link} from 'react-router-dom'
 
 
 
@@ -14,9 +15,11 @@ class ShowSubscribers extends Component {
   clickHandler(message){
     alert(message);
   }
+  
 
 
   render(){
+    console.log(this.props.subscribersList);
     // let subscribers=[
     //   { 
     //     id:1,
@@ -36,7 +39,7 @@ class ShowSubscribers extends Component {
          <Header heading="Phone Directory" />
          
         <div className="component-body-container">
-          <button className="custom-btn add-btn">Add</button>
+         <Link to='/addSubscriber'><button className="custom-btn add-btn">Add</button> </Link>
 
           <div className="grid-container heading-container">
             <span className="grid-item name-heading">Name</span>
@@ -45,7 +48,7 @@ class ShowSubscribers extends Component {
 
           
           {this.props.subscribersList.map(item=>{
-              return <div key={item.id}className="grid-container">
+              return <div key={item.id} className="grid-container">
                       <span className="grid-item">{item.name}</span>
                       <span className="grid-item">{item.number}</span>
                       <span className="grid-item action-btn-container">
