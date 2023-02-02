@@ -28,7 +28,7 @@ class AddSubscriber extends Component{
           e.preventDefault();
           this.props.addSubscriberHandler(this.state);
           this.setState({id:0,name:'',number:''});
-        //   this.navigate('/');
+          // this.props.history.push("/")
 
 
     }
@@ -84,7 +84,7 @@ class AddSubscriber extends Component{
                             <span className="subscriber-info">Name:{name}</span><br/>
                             <span className="subscriber-info">Phone:{number}</span>
                       </div>
-                      <button type="submit" className="custom-btn add-btn">Add</button>
+                   <button type="submit" className="custom-btn add-btn">Add</button>
                     </ValidatorForm>
                     
                 </div>
